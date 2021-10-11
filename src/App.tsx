@@ -1,10 +1,13 @@
 import React from 'react';
 import { Navbar } from "./components/Navbar";
+import {TodoForm} from "./components/TodoForm";
 
 const App: React.FC = () =>
     <>
         <Navbar/>
-        <h1>Hello TypeScript</h1>
+        <div className="container">
+            <TodoForm/>
+        </div>
     </>
 ;
 
