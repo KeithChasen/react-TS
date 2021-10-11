@@ -7,9 +7,23 @@ export const TodoForm: React.FC = () => {
       setTitle(e.target.value);
     };
 
+    const keyPressHandler = (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter') {
+            console.log(title)
+            setTitle('')
+        }
+    };
+
     return (
         <div className="input-field mt2">
-            <input value={title} onChange={changeHandler} type="text" id="title" placeholder="Title"/>
+            <input
+                value={title}
+                onChange={changeHandler}
+                onKeyPress={keyPressHandler}
+                type="text"
+                id="title"
+                placeholder="Title"
+            />
             <label htmlFor="title" className='active'>Title</label>
         </div>
     )
