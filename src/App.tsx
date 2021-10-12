@@ -17,9 +17,6 @@ const App: React.FC = () => {
     };
 
     const toggleHandler = (id: number) => {
-        console.log('works ', id)
-
-
         setTodos(prev => prev.map(todo => {
             if (todo.id === id) {
                 return {

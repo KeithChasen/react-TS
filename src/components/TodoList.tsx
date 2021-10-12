@@ -8,6 +8,10 @@ type TodoListProps = {
 }
 
 export const TodoList: React.FC<TodoListProps> = ({ todos, onRemove, onToggle }) => {
+    if (todos.length === 0) {
+        return <p className="center">Nothing to do</p>
+    }
+
     return (
         <ul>
             {todos.map(todo => {
