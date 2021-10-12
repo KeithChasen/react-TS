@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { ITodo } from "../interfaces/interfaces";
 
 type TodoListProps = {
-    todos: any[]
+    todos: ITodo[]
 }
 
 export const TodoList: React.FC<TodoListProps> = ({ todos }) => {
