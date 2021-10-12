@@ -8,6 +8,11 @@ type TodoListProps = {
 }
 
 export const TodoList: React.FC<TodoListProps> = ({ todos, onRemove, onToggle }) => {
+    const removeHandler = (e: React.MouseEvent, id: number) => {
+        e.preventDefault();
+        onRemove(id)
+    };
+    
     if (todos.length === 0) {
         return <p className="center">Nothing to do</p>
     }
@@ -30,7 +35,7 @@ export const TodoList: React.FC<TodoListProps> = ({ todos, onRemove, onToggle })
                             <span>{todo.title}</span>
                             <i
                                 className="material-icons red-text"
-                                onClick={() => onRemove(todo.id)}
+                                onClick={(e) => removeHandler(e, todo.id)}
                             >
                                 delete
                             </i>
